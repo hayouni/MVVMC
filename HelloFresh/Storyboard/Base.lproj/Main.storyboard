@@ -1,0 +1,110 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="18122" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="18093"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <customFonts key="customFonts">
+        <array key="MavenPro-Bold.ttf">
+            <string>MavenPro-Bold</string>
+        </array>
+    </customFonts>
+    <scenes>
+        <!--Home View Controller-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController storyboardIdentifier="HomeViewController" id="BYZ-38-t0r" customClass="HomeViewController" customModule="HelloFresh" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="d6t-iU-zkV">
+                                <rect key="frame" x="0.0" y="44" width="414" height="818"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <connections>
+                                    <outlet property="dataSource" destination="BYZ-38-t0r" id="pt2-3K-TZd"/>
+                                    <outlet property="delegate" destination="BYZ-38-t0r" id="csi-aT-R0f"/>
+                                </connections>
+                            </tableView>
+                            <view hidden="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="UGR-4s-oCE">
+                                <rect key="frame" x="0.0" y="44" width="414" height="818"/>
+                                <subviews>
+                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="center" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="smiIcon" translatesAutoresizingMaskIntoConstraints="NO" id="Ee5-8V-CSw">
+                                        <rect key="frame" x="147" y="56" width="120" height="120"/>
+                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="120" id="9vU-E2-tDd"/>
+                                            <constraint firstAttribute="width" constant="120" id="xji-1u-JdY"/>
+                                        </constraints>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                                <integer key="value" value="60"/>
+                                            </userDefinedRuntimeAttribute>
+                                        </userDefinedRuntimeAttributes>
+                                    </imageView>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="This feature is temporarily unavailable" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="42g-YJ-F8V">
+                                        <rect key="frame" x="50" y="226" width="314" height="19"/>
+                                        <fontDescription key="fontDescription" name="MavenPro-Bold" family="Maven Pro" pointSize="16"/>
+                                        <color key="textColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Xyo-dF-bLm">
+                                        <rect key="frame" x="50" y="295" width="314" height="30"/>
+                                        <color key="backgroundColor" red="0.8795000315" green="0.1902697086" blue="0.21093499660000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="30" id="ZxW-Kl-ALm"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" type="boldSystem" pointSize="19"/>
+                                        <color key="tintColor" red="0.96471232179999999" green="0.96469432119999998" blue="0.96470659969999994" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                        <state key="normal" title="Retry"/>
+                                        <connections>
+                                            <action selector="retryButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="5Pe-yZ-nXx"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <constraints>
+                                    <constraint firstAttribute="trailing" secondItem="Xyo-dF-bLm" secondAttribute="trailing" constant="50" id="6B5-hT-H8f"/>
+                                    <constraint firstItem="Xyo-dF-bLm" firstAttribute="leading" secondItem="UGR-4s-oCE" secondAttribute="leading" constant="50" id="D24-vd-8N9"/>
+                                    <constraint firstAttribute="trailing" secondItem="42g-YJ-F8V" secondAttribute="trailing" constant="50" id="Hcp-kp-mZS"/>
+                                    <constraint firstItem="42g-YJ-F8V" firstAttribute="top" secondItem="Ee5-8V-CSw" secondAttribute="bottom" constant="50" id="MXd-S7-vsf"/>
+                                    <constraint firstItem="Xyo-dF-bLm" firstAttribute="top" secondItem="42g-YJ-F8V" secondAttribute="bottom" constant="50" id="Tew-fa-v0k"/>
+                                    <constraint firstItem="Ee5-8V-CSw" firstAttribute="centerX" secondItem="UGR-4s-oCE" secondAttribute="centerX" id="fyG-LP-NQa"/>
+                                    <constraint firstItem="42g-YJ-F8V" firstAttribute="leading" secondItem="UGR-4s-oCE" secondAttribute="leading" constant="50" id="mFm-dJ-nUd"/>
+                                    <constraint firstItem="Ee5-8V-CSw" firstAttribute="top" secondItem="UGR-4s-oCE" secondAttribute="top" constant="56" id="qmf-5U-rtb"/>
+                                </constraints>
+                            </view>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="UGR-4s-oCE" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="6qC-VR-Awp"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="UGR-4s-oCE" secondAttribute="bottom" id="Kzu-Uq-BPj"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="UGR-4s-oCE" secondAttribute="trailing" id="Ub5-QJ-uZO"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="d6t-iU-zkV" secondAttribute="bottom" id="bAT-eM-VxN"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="d6t-iU-zkV" secondAttribute="trailing" id="goL-vH-ddX"/>
+                            <constraint firstItem="d6t-iU-zkV" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="neP-Zm-Gw8"/>
+                            <constraint firstItem="UGR-4s-oCE" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="pYM-is-OC5"/>
+                            <constraint firstItem="d6t-iU-zkV" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="yKN-F2-BeC"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="errorView" destination="UGR-4s-oCE" id="VrC-X9-c0G"/>
+                        <outlet property="tableView" destination="d6t-iU-zkV" id="gkq-pY-9b6"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-749" y="35"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="smiIcon" width="101" height="59"/>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
+</document>
